@@ -27,15 +27,21 @@ spec:
     {{- end }}
   {{- end }}
   rules:
-    {{- range .Values.ingress.hosts }}
-    - host: {{ .host | quote }}
-      http:
+    - http:
         paths:
-          {{- range .paths }}
-          - path: {{ .path }}
+          - path: /*
             backend:
               serviceName: {{ $fullName }}
               servicePort: {{ $svcPort }}
-          {{- end }}
-    {{- end }}
+    # {{- range .Values.ingress.hosts }}
+    # - host: {{ .host | quote }}
+    #   http:
+    #     paths:
+    #       {{- range .paths }}
+    #       - path: {{ .path }}
+    #         backend:
+    #           serviceName: {{ $fullName }}
+    #           servicePort: {{ $svcPort }}
+    #       {{- end }}
+    # {{- end }}
   {{- end }}
