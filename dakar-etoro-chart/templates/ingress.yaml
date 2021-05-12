@@ -29,19 +29,9 @@ spec:
   rules:
     - http:
         paths:
-          - path: /*
+          - path: /(.*)
+            pathType: Prefix
             backend:
               serviceName: {{ $fullName }}
               servicePort: {{ $svcPort }}
-    # {{- range .Values.ingress.hosts }}
-    # - host: {{ .host | quote }}
-    #   http:
-    #     paths:
-    #       {{- range .paths }}
-    #       - path: {{ .path }}
-    #         backend:
-    #           serviceName: {{ $fullName }}
-    #           servicePort: {{ $svcPort }}
-    #       {{- end }}
-    # {{- end }}
   {{- end }}
