@@ -8,7 +8,7 @@ RUN \
     curl -sSL https://get.docker.com/ | sh && \
     usermod -aG docker jenkins && \
     # Azure cli
-    curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash && \
+    curl -sL https://aka.ms/InstallAzureCLIDeb | bash && \
     # Kubectl
     az aks install-cli && \
     # Helm
