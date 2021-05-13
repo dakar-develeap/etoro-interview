@@ -1,3 +1,5 @@
+properties([pipelineTriggers([githubPush()])])
+
 pipeline {
     agent any
 
@@ -5,11 +7,6 @@ pipeline {
         stage('Chekcout') {
             steps {
                 checkout scm
-            }
-        }
-        stage('Set Version') {
-            steps {
-                echo 'Setting version..'
             }
         }
         stage('Deploy') {
