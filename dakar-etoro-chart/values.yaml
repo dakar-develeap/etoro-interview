@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: mcr.microsoft.com/azuredocs/aks-helloworld
+  repository: acrinterview.azurecr.io/simple-web
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1"
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
