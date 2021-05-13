@@ -5,11 +5,17 @@ pipeline {
 
     stages {
         stage('Chekcout') {
+            when {
+                changeset "dakar-etoro-chart/**"
+            }            
             steps {
                 checkout scm
             }
         }
         stage('Deploy') {
+            when {
+                changeset "dakar-etoro-chart/**"
+            }            
             steps {
                 sh '''
                 az login --identity --output none
