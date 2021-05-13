@@ -2,19 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Chekcout') {
             steps {
-                echo 'Building..'
+                checkout scm
             }
         }
-        stage('Test') {
+        stage('Set Version') {
             steps {
-                echo 'Testing..'
+                echo 'Setting version..'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                
             }
         }
     }
