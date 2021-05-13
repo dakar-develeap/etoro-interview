@@ -15,9 +15,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                az login --identity
+                az login --identity --output none
                 az acr login --name $ACR_LOGINSERVER
                 az aks get-credentials --resource-group $AKS_RESOURCE_GROUP --name $AKS_CLUSTER
+                helm upgrade --install --namespace default simple-web-chart dakar-etoro-chart/
                 '''
             }
         }
