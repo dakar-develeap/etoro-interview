@@ -2,7 +2,7 @@
 ## Nginx ingress controller
 I've installed nginx ingress controller using helm from - https://docs.microsoft.com/en-us/azure/aks/ingress-basic
 
-## Applicatoin helm chart
+## Application helm chart
 1. I've initialized a helm chart using helm create command and configured the relevant yaml files.
 2. I didn't change anything from the template files except for the ingress resource, the Chart.yaml and the values.yaml
 3. Chart.yaml - since we don't manage the application versions I've changes the 'appVersion' attribue to 'latest'
