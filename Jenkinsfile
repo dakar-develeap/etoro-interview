@@ -4,14 +4,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Chekcout') {
-            when {
-                changeset "dakar-etoro-chart/**"
-            }            
-            steps {
-                checkout scm
-            }
-        }
         stage('Deploy') {
             when {
                 changeset "dakar-etoro-chart/**"
